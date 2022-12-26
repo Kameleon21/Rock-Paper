@@ -2,32 +2,38 @@
 function getComputerChoice() {
     let answer = Math.floor(Math.random()* 3) + 1;
     if(answer == 1) {
-        answer = "Rock";
+        answer = "rock";
     } else if(answer == 2) {
-        answer = "Paper";
+        answer = "paper";
     } else {
-        answer = "Scissors";
+        answer = "scissors";
     }
     return answer;
 }
 
 function playRound(playerSelection, computerSelection) {
 // I thought that my changing the word to a number I can compare the answer better
-    // if(playerSelection == "Rock") {
-    //     playerSelection = 1;
-    // } else if(playerSelection == "Paper") {
-    //     playerSelection = 2;
-    // } else if(playerSelection = "Scissors") {
-    //     playerSelection = 3;
-    // }
+    if(playerSelection == "rock") {
+        playerSelection = 1;
+    } else if(playerSelection == "paper") {
+        playerSelection = 2;
+    } else if(playerSelection == "scissors") {
+        playerSelection = 3;
+    }
 
-    // if(computerSelection == "Rock") {
-    //     computerSelection = 1;
-    // } else if(computerSelection == "Paper") {
-    //     computerSelection = 2;
-    // } else if(computerSelection = "Scissors") {
-    //     computerSelection = 3;
-    // }
+    if(computerSelection == "rock") {
+        computerSelection = 1;
+    } else if(computerSelection == "paper") {
+        computerSelection = 2;
+    } else if(computerSelection == "scissors") {
+        computerSelection = 3;
+    }
+
+    if(playerSelection == 1 && computerSelection == 3 ) {
+        return "You win";
+    } else if(playerSelection == 3 && computerSelection == 1) {
+        return "You Lost";
+    }
     // debugger;
 
    if(playerSelection === computerSelection) {
@@ -40,6 +46,9 @@ function playRound(playerSelection, computerSelection) {
 }
 
 const computerSelection = getComputerChoice();
-const playerSelection = "Scissors";
+// Getting player input from the user using GUI
+let playerSelection = prompt("Choose your weapon: Rock , Paper or Scissors");
+// Making player answer case insensitive 
+playerSelection = playerSelection.toLowerCase();
 console.log(computerSelection);
 console.log(playRound(playerSelection,computerSelection));
