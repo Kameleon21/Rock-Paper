@@ -1,3 +1,4 @@
+// Global variables for the score 
 let yourScore=0;
 let alienScore=0;
 let currentScore;
@@ -15,6 +16,7 @@ function getComputerChoice() {
     return answer;
 }
 
+// Function to find out who wins one game
 function playRound(playerSelection, computerSelection) {
 // I thought that my changing the word to a number I can compare the answer better
     if(playerSelection == "rock") {
@@ -38,7 +40,6 @@ function playRound(playerSelection, computerSelection) {
     } else if(playerSelection == 3 && computerSelection == 1) {
         return "You Lost";
     }
-    // debugger;
 
    if(playerSelection === computerSelection) {
     return "Tie";
@@ -59,7 +60,7 @@ function game(){
         let playerSelection = prompt("Choose your weapon: Rock,Paper or Scissors");
         playerSelection = playerSelection.toLowerCase();
         const computerSelection = getComputerChoice();
-        // console.log("The Alien chose:"+computerSelection);
+        console.log("The Alien chose "+ computerSelection);
         currentScore = playRound(playerSelection,computerSelection);
 
         if(currentScore == "You Win") {
@@ -74,7 +75,7 @@ function game(){
         break;
     }
 
-    
+    // Alerting the player they have won or lost
     if(yourScore == 5) {
         alert("You won the game! Earth is saved for now")
     } else if (alienScore == 5) {
@@ -83,4 +84,5 @@ function game(){
 }
 
 
+// Calling on the function to start the game
 game();
