@@ -7,4 +7,6 @@ Computer chooses randomly from Rock,Paper or Scissors
 You choose from Rock,Paper or Scissors
 You set the rules/logic of the game
 Play your answer against the computer and store the answer in a variable
+    -add a variable to store computer score too
+    -Play the game 5 times and print the answer of each into the console
 Print the variable on to the screen 

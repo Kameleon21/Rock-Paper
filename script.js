@@ -45,10 +45,16 @@ function playRound(playerSelection, computerSelection) {
    }
 }
 
-const computerSelection = getComputerChoice();
-// Getting player input from the user using GUI
-let playerSelection = prompt("Choose your weapon: Rock , Paper or Scissors");
-// Making player answer case insensitive 
-playerSelection = playerSelection.toLowerCase();
-console.log(computerSelection);
-console.log(playRound(playerSelection,computerSelection));
+
+// So far the function asks the user for an input and generates an answer each loop for the computer
+function game(){
+    for(let i = 0;i<5;i++) {
+        let playerSelection = prompt();
+        playerSelection = playerSelection.toLowerCase();
+        const computerSelection = getComputerChoice();
+        console.log("The computer chose:"+computerSelection);
+        console.log(playRound(playerSelection,computerSelection));
+    }
+}
+
+game();
