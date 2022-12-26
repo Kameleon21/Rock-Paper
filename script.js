@@ -1,3 +1,7 @@
+let yourScore=0;
+let alienScore=0;
+let currentScore;
+
 /* Computer chooses randomly from Rock,Paper Scissors */
 function getComputerChoice() {
     let answer = Math.floor(Math.random()* 3) + 1;
@@ -30,7 +34,7 @@ function playRound(playerSelection, computerSelection) {
     }
 
     if(playerSelection == 1 && computerSelection == 3 ) {
-        return "You win";
+        return "You Win";
     } else if(playerSelection == 3 && computerSelection == 1) {
         return "You Lost";
     }
@@ -48,13 +52,35 @@ function playRound(playerSelection, computerSelection) {
 
 // So far the function asks the user for an input and generates an answer each loop for the computer
 function game(){
-    for(let i = 0;i<5;i++) {
-        let playerSelection = prompt();
+    // GUI, making it better for user
+    alert("Welcome to RPS, you will be playing against the Alien.\nFirst to 5 wins");
+
+    for(let i = 0;i<100;i++) {
+        let playerSelection = prompt("Choose your weapon: Rock,Paper or Scissors");
         playerSelection = playerSelection.toLowerCase();
         const computerSelection = getComputerChoice();
-        console.log("The computer chose:"+computerSelection);
-        console.log(playRound(playerSelection,computerSelection));
+        // console.log("The Alien chose:"+computerSelection);
+        currentScore = playRound(playerSelection,computerSelection);
+
+        if(currentScore == "You Win") {
+            yourScore += 1;
+        } else if (currentScore == "You Lost") {
+            alienScore +=1;
+        }
+        console.log("Your score is "+yourScore);
+        console.log("The Alien score is "+alienScore);
+
+        if(yourScore === 5 || alienScore === 5)
+        break;
+    }
+
+    
+    if(yourScore == 5) {
+        alert("You won the game! Earth is saved for now")
+    } else if (alienScore == 5) {
+        alert("You lost! Go and hide the Aliens are coming!")
     }
 }
+
 
 game();
