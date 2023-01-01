@@ -7,13 +7,13 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    background-color: #000;
+    background-color: #fff1c1;
 }
 
 /* top div */
 
 .top h1,h2 {
-    color: #fff;
+    color: #000;
     text-align: center;
     padding: 2em;
 }
@@ -25,20 +25,22 @@ body {
     justify-content: center;
     align-items: center;
     gap: 5em;
+    background-color: #fbfbfb;
+    padding: 2em;
 }
 
 .objects h2 {
     color: #fff;
 }
 
-.rock,.paper,.scissors {
+#rock,#paper,#scissors {
     width: 200px;
     height: 200px;
-    transition: 0.5s;
+    transition: 0.2s; 
 }
 
-.rock:hover,.paper:hover,.scissors:hover {
-    transform: scale(1.1);
+#rock:hover,#paper:hover,#scissors:hover {
+    transform: scale(1.1); 
 }
 
 /* score div */
@@ -63,11 +65,12 @@ body {
 /* footer */
 
 .footer {
-    background: gray;
+    background: #fbfbfb;
     margin-top: auto;
 }
 
 .footer p {
     text-align: center;
     padding: 2.5em;
+    font-weight: 550;
 }
