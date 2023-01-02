@@ -12,11 +12,19 @@ body {
 
 /* top div */
 
-.top h1,h2 {
+.top{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.top h2,h1 {
     color: #000;
     text-align: center;
     padding: 2em;
 }
+
 
 /* object div */
 
@@ -45,21 +53,30 @@ body {
 
 /* score div */
 
-.score {
+#score {
    display: flex;
    flex-direction: column;
    justify-content: center;
    align-items: center;
-   color: #fff;
+   /* text-align: center; */
+   color: #000;
    padding: 2em;
 }
 
 .para {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12em;
+    gap: 2em;
+    margin-top: 2em;
 }
+
+#para-one,#para-two {
+    text-align: center;
+    border: solid 2px #000;
+    border-radius: 10px;
+    margin: 1em 0em;
+    padding: .5em;
+}
+
 
 
 /* footer */

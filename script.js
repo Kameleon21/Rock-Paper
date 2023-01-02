@@ -1,12 +1,14 @@
 // Global variables for the score 
 let yourScore=0;
-let alienScore=0;
+let computerScore=0;
 let currentScore;
 
 // The player presses the reset to get a new answer for computerSelection and playerAnswer
-let computerAnswer;
+const computerArray = ['rock','paper','scissors']
+let computerSelection = computerArray[Math.floor(Math.random()*computerArray.length)];
+let computerAnswer = computerSelection;
 const reset = document.getElementById('reset').addEventListener('click', () => {
-    playerAnswer = '';
+    playerAnswer = undefined;
     const computerArray = ['rock','paper','scissors']
     let computerSelection = computerArray[Math.floor(Math.random()*computerArray.length)];
     computerAnswer = computerSelection;
@@ -65,44 +67,42 @@ function playRound(playerAnswer, computerAnswer) {
        }
     }
 
-// So far the function asks the user for an input and generates an answer each loop for the computer
-function game(){
-    // GUI, making it better for user
-   
+const paraOne = document.getElementById('para-one');
+const paraTwo = document.getElementById('para-two');
+const scoreAnswerOne = document.getElementById('para-one-answer');
+const scoreAnswerTwo = document.getElementById('para-two-answer');
+const checkAnswer = document.getElementById('Winner')
+const scoreBoard = document.getElementById('score');
 
 
-
-
-    // for(let i = 0;i<100;i++) {
-    //     let playerAnswer() = prompt("Choose your weapon: Rock,Paper or Scissors");
-    //     playerAnswer() = playerAnswer().toLowerCase();
-    //     let answer1 = computerSelection;
-    //     console.log("The Alien chose "+ answer1);
-    //     currentScore = playRound(playerAnswer(),answer1);
-
-    //     if(currentScore == "You Win") {
-    //         yourScore += 1;
-    //     } else if (currentScore == "You Lost") {
-    //         alienScore +=1;
-    //     }
-    //     console.log("Your score is "+yourScore);
-    //     console.log("The Alien score is "+alienScore);
-
-    //     if(yourScore === 5 || alienScore === 5)
-    //     break;
-    // }
- 
-
-    // Alerting the player they have won or lost
-    if(yourScore == 5) {
-        alert("You won the game! Earth is saved for now")
-    } else if (alienScore == 5) {
-        alert("You lost! Go and hide the Aliens are coming!")
-    }
+function checkWinner(yourScore,computerScore){
+if(yourScore == 5 ) {
+    checkAnswer.innerText = 'You won the game!' 
+    scoreBoard.removeChild(paraOne);
+    scoreBoard.removeChild(paraTwo)
+    scoreBoard.appendChild(checkAnswer);
+} else if(computerScore == 5 ) {
+    checkAnswer.innerText = "You lost! Computer Won\n \t"
+    scoreBoard.removeChild(paraOne);
+    scoreBoard.removeChild(paraTwo)
+    scoreBoard.appendChild(checkAnswer);
 }
-
+}
 
 // Player presses on the play game button to initiated the game
 const playGame = document.getElementById('play-game').addEventListener('click',() => {
-    console.log(playRound(playerAnswer,computerAnswer));
+    currentScore = playRound(playerAnswer,computerAnswer);
+    if(currentScore == "You Win") {
+        yourScore += 1;
+    } else if (currentScore == "You Lost") {
+        computerScore +=1;
+    }
+
+    scoreAnswerOne.innerText= `${computerScore}`;
+    scoreAnswerTwo.innerText = `${yourScore}`
+    paraOne.appendChild(scoreAnswerOne);
+    paraTwo.appendChild(scoreAnswerTwo);
+
+    checkWinner(yourScore,computerScore);
 })
+
