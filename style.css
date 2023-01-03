@@ -12,17 +12,21 @@ body {
 
 /* top div */
 
-.top{
+#header{
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
 
-.top h2,h1 {
+#header h2,h1 {
     color: #000;
     text-align: center;
     padding: 2em;
+}
+
+#top-para {
+    margin: -1em 0em 2em;
 }
 
 
@@ -35,6 +39,7 @@ body {
     gap: 5em;
     background-color: #fbfbfb;
     padding: 2em;
+
 }
 
 .objects h2 {
@@ -42,9 +47,14 @@ body {
 }
 
 #rock,#paper,#scissors {
+    border: none;
+    outline: none;
+}
+
+#rock img,#paper img,#scissors img {
     width: 200px;
     height: 200px;
-    transition: 0.2s; 
+    transition: 0.5s; 
 }
 
 #rock:hover,#paper:hover,#scissors:hover {
@@ -63,10 +73,14 @@ body {
    padding: 2em;
 }
 
-.para {
+#para {
     display: flex;
     gap: 2em;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
     margin-top: 2em;
+    width: 300px;
 }
 
 #para-one,#para-two {
@@ -77,7 +91,9 @@ body {
     padding: .5em;
 }
 
-
+#current-result {
+    margin-top: 1em;
+}
 
 /* footer */
 

@@ -8,23 +8,29 @@
     <title>Rock-Paper-Scissor</title>
 </head>
 <body>
-    <div class="top">
+    <div id="header">
         <h1>Welcome to Rock Paper Scissors Game! </h1>
+        <p id="top-para">First to reach 5 points wins.</p>
         <h2>Choose Your Item</h2>
     </div>
     <div class="objects">
-        <img src="./images/rock.jpeg" alt="picture of a rock" id="rock">
-        <img src="./images/paper.png" alt="picture of paper" id="paper">
-        <img src="./images/scissors.png" alt="picture of scissors" id="scissors">
+        <button id="rock">
+            <img src="./images/rock.jpeg" alt="picture of a rock">
+        </button>
+        <button id="paper">
+            <img src="./images/paper.png" alt="picture of paper">
+        </button>
+        <button id="scissors">
+            <img src="./images/scissors.png" alt="picture of scissors">
+        </button>
     </div>
     <div id="score">
         <h2>Score Board </h2>
-        <div class="para">
-            <button id="play-game">Play Game</button>
-            <button id="reset">Reset Game</button>
+        <div id ="para">
             <p id="para-one">Computer Score:<span id="para-one-answer"></span></p>
             <p id="para-two">Player Score:<span id="para-two-answer"></span></p>
         </div>
+        <div id="current-result"></div>
         <div id="Winner"></div>
     </div>
     <div class="footer">
