@@ -1,12 +1,29 @@
-# Rock-Paper
-PseudoCode
-Computer chooses randomly from Rock,Paper or Scissors
-    -The answer has to be random from the three option 
-    -Create a variable to store the answer of this function
-    -Randomly create a number from 1-3 and assign a value for 1-3 for R,P,S
-You choose from Rock,Paper or Scissors
-You set the rules/logic of the game
-Play your answer against the computer and store the answer in a variable
-    -add a variable to store computer score too
-    -Play the game 5 times and print the answer of each into the console
-Print the variable on to the screen 
+#Title:
+
+Rock Paper Scissors Game
+
+
+##Description:
+
+This rps was created using HTML,CSS and JavaScript. 
+
+It's a simple game where the user plays against computer generated answers. The first player to reach 5 points wins.
+
+This project was created to aid my learning of fundamentals of JS.
+
+Some of the challenges I faced when creating this project was figuring out how to work make it so that each time the user presses on the picture of the item they want to use it would start the game 
+logic but also keep track of the score. 
+
+The second thing I found challenging was how to get a random generated answer from rock,paper or scissors by the computer each time they clicked on their choice.
+
+
+##How to use the project: 
+
+
+
+
+##Contributing
+Pull requests are welcomed. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
