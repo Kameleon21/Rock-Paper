@@ -18,6 +18,9 @@ The second thing I found challenging was how to get a random generated answer fr
 
 
 ##How to use the project: 
+![Screenshot_2023-01-04_08-34-41](https://user-images.githubusercontent.com/92760571/210515603-342c0eb1-735f-43a9-8230-d1d1e471ac64.png)
+![Screenshot_2023-01-04_08-35-33](https://user-images.githubusercontent.com/92760571/210515635-bc65f459-c936-45c3-8126-75c35f82e570.png)
+![Screenshot_2023-01-04_08-35-51](https://user-images.githubusercontent.com/92760571/210515640-862f8d0f-40d9-4156-a057-d8361cd3a450.png)
 
 
 
