@@ -17,20 +17,19 @@ let yourScore=0;
 let computerScore=0;
 let currentScore;
 let playerAnswer;
-// let computerAnswer;
 
 // adds up the scores each round and displays he result for that specific rounds
 function addScore(currentScore) {
     if(currentScore === "You Win") {
         yourScore ++;
-        result.innerText = `This round you won. ${playerAnswer} beats ${computerAnswer}`
+        result.textContent = `This round you won.`;
         scoreBoard.appendChild(result);
     } else if (currentScore === "You Lost") {
         computerScore ++;
-        result.innerText = `This round you lost. ${computerAnswer} beats ${playerAnswer}`
+        result.textContent = `This round you lost. `;
         scoreBoard.appendChild(result);
     } else if(currentScore ==='Tie') {
-        result.innerText = `This round was a Tie`
+        result.textContent = `This round was a Tie`
         scoreBoard.appendChild(result);
     }
 }
@@ -44,7 +43,7 @@ function checkWinner(yourScore,computerScore){
         scoreBoard.removeChild(result);
         scoreBoard.appendChild(checkAnswer);
     } else if(computerScore == 5 ) {
-        checkAnswer.innerText = "You lost! Computer Won\n\n\n If you want to play again, refresh this page."
+        checkAnswer.innerText = "You lost! Computer Won \n\n\n If you want to play again, refresh this page."
         scoreBoard.removeChild(maindiv);
         scoreBoard.removeChild(checkAnswer);
         scoreBoard.removeChild(result);
@@ -54,45 +53,44 @@ function checkWinner(yourScore,computerScore){
 
     // Two values passed through and go through the playRound function 
 function playRound(playerAnswer, computerAnswer) {
-    // I thought that my changing the word to a number I can compare the answer better
-        if(playerAnswer == "Rock") {
-            playerAnswer = 1;
-        } else if(playerAnswer == "Paper") {
-            playerAnswer = 2;
-        } else if(playerAnswer == "Scissors") {
-            playerAnswer = 3;
-        }
-    
-        if(computerAnswer == "Rock") {
-            computerAnswer = 1;
-        } else if(computerAnswer == "Paper") {
-            computerAnswer = 2;
-        } else if(computerAnswer == "Scissors") {
-            computerAnswer = 3;
-        }
-    
-        if(playerAnswer == 1 && computerAnswer == 3 ) {
-            return "You Win";
-        } else if(playerAnswer == 3 && computerAnswer == 1) {
-            return "You Lost";
-        }
-    
-       if(playerAnswer === computerAnswer) {
-        return  "Tie";
-       } else if(playerAnswer > computerAnswer) {
-        return "You Win";
-       } else if(playerAnswer < computerAnswer) {
-        return "You Lost";
-       }
+    if(playerAnswer == "Rock") {
+        playerAnswer = 1;
+    } else if(playerAnswer == "Paper") {
+        playerAnswer = 2;
+    } else if(playerAnswer == "Scissors") {
+        playerAnswer = 3;
     }
+
+    if(computerAnswer == "Rock") {
+        computerAnswer = 1;
+    } else if(computerAnswer == "Paper") {
+        computerAnswer = 2;
+    } else if(computerAnswer == "Scissors") {
+        computerAnswer = 3;
+    }
+
+    if(playerAnswer == 1 && computerAnswer == 3 ) {
+        return "You Win";
+    } else if(playerAnswer == 3 && computerAnswer == 1) {
+        return "You Lost";
+    }
+
+    if(playerAnswer === computerAnswer) {
+    return  "Tie";
+    } else if(playerAnswer > computerAnswer) {
+    return "You Win";
+    } else if(playerAnswer < computerAnswer) {
+    return "You Lost";
+    }
+}
 
 rock.addEventListener('click', () => {
     playerAnswer = 'Rock';
     currentScore = playRound(playerAnswer,computerAnswer());
     addScore(currentScore);
     // adds and appends the scores for each round
-    scoreAnswerOne.innerText= `${computerScore}`;
-    scoreAnswerTwo.innerText = `${yourScore}`
+    scoreAnswerOne.textContent= `${computerScore}`;
+    scoreAnswerTwo.textContent = `${yourScore}`
     paraOne.appendChild(scoreAnswerOne);
     paraTwo.appendChild(scoreAnswerTwo);
     checkWinner(yourScore,computerScore);
@@ -104,8 +102,8 @@ paper.addEventListener('click',() => {
     currentScore = playRound(playerAnswer,computerAnswer());
     addScore(currentScore);
     // adds and appends the scores for each round
-    scoreAnswerOne.innerText= `${computerScore}`;
-    scoreAnswerTwo.innerText = `${yourScore}`
+    scoreAnswerOne.textContent= `${computerScore}`;
+    scoreAnswerTwo.textContent = `${yourScore}`
     paraOne.appendChild(scoreAnswerOne);
     paraTwo.appendChild(scoreAnswerTwo);
     checkWinner(yourScore,computerScore);
@@ -116,15 +114,16 @@ scissors.addEventListener('click',() => {
     currentScore = playRound(playerAnswer,computerAnswer());
     addScore(currentScore);
     // adds and appends the scores for each round
-    scoreAnswerOne.innerText= `${computerScore}`;
-    scoreAnswerTwo.innerText = `${yourScore}`
+    scoreAnswerOne.textContent= `${computerScore}`;
+    scoreAnswerTwo.textContent = `${yourScore}`
     paraOne.appendChild(scoreAnswerOne);
     paraTwo.appendChild(scoreAnswerTwo);
     checkWinner(yourScore,computerScore);
 })
 
-
+// Random answer generated each time for the computer when the function runs
 const computerArray = ['Rock','Paper','Scissors']
 function computerAnswer() {
    return computerArray[Math.floor(Math.random()*computerArray.length)];
 };
+// computerAnswer() = computerAnswer();
