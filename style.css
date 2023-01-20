@@ -94,6 +94,22 @@ body {
     margin-top: 1em;
 }
 
+/* reset btn */
+
+.btn {
+    padding: 10px;
+    border-radius: 5px;
+    background-color: rgb(43, 73, 207);
+    border-color: rgb(43, 73, 207);
+    transition: 20ms;
+    margin-top: 10px;
+}
+
+.btn:hover {
+    color: #fff;
+    transform: scale(1.1);
+}
+
 /* footer */
 
 .footer {

@@ -18,6 +18,23 @@ let computerScore=0;
 let currentScore;
 let playerAnswer;
 
+
+// reset game button 
+const resetBtn = document.createElement('button');
+resetBtn.classList.add('btn')
+resetBtn.textContent = "New Game";
+function newGame()  {
+    yourScore = 0;
+    computerScore = 0;
+    scoreAnswerOne.innerText = " ";
+    scoreAnswerTwo.innerText= "";
+    scoreBoard.append(maindiv)
+    // scoreBoard.removeChild(maindiv);
+    maindiv.classList.add('para');
+    checkAnswer.innerText='';
+    scoreBoard.removeChild(resetBtn);
+}
+ 
 // adds up the scores each round and displays he result for that specific rounds
 function addScore(currentScore) {
     if(currentScore === "You Win") {
@@ -37,17 +54,21 @@ function addScore(currentScore) {
 // checks for winner and deletes nodes and leaves only the result
 function checkWinner(yourScore,computerScore){
     if(yourScore == 5 ) {
-        checkAnswer.innerText = 'You won the game! \n\n\n If you want to play again, refresh this page.' 
+        checkAnswer.innerText = 'You won the game!'; 
         scoreBoard.removeChild(maindiv);
         scoreBoard.removeChild(checkAnswer);
         scoreBoard.removeChild(result);
         scoreBoard.appendChild(checkAnswer);
+        resetBtn.addEventListener('click', newGame)
+        scoreBoard.append(resetBtn);
     } else if(computerScore == 5 ) {
-        checkAnswer.innerText = "You lost! Computer Won \n\n\n If you want to play again, refresh this page."
+        checkAnswer.innerText = "You lost! Computer Won";
         scoreBoard.removeChild(maindiv);
         scoreBoard.removeChild(checkAnswer);
         scoreBoard.removeChild(result);
         scoreBoard.appendChild(checkAnswer);
+        resetBtn.addEventListener('click', newGame);
+        scoreBoard.append(resetBtn);
     }
     }
 
